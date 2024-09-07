@@ -3299,6 +3299,18 @@ Source: AVX .. aphvc.pdf</description>
 <rectangle x1="-0.15" y1="0.05" x2="0.15" y2="0.1" layer="51"/>
 <rectangle x1="-0.15" y1="-0.1" x2="0.15" y2="-0.05" layer="51"/>
 </package>
+<package name="LED_SMD_SM">
+<smd name="1" x="0" y="0" dx="1.25" dy="1" layer="1" rot="R90"/>
+<smd name="2" x="2" y="0" dx="1.25" dy="1" layer="1" rot="R90"/>
+<text x="-0.5" y="1" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-0.5" y="-1.5" size="0.4064" layer="27">&gt;VALUE</text>
+<wire x1="1" y1="0.5" x2="1" y2="0" width="0.127" layer="48"/>
+<wire x1="1" y1="0" x2="1" y2="-0.5" width="0.127" layer="48"/>
+<wire x1="1" y1="0" x2="0.5" y2="0.5" width="0.127" layer="48"/>
+<wire x1="0.5" y1="0.5" x2="0.5" y2="-0.5" width="0.127" layer="48"/>
+<wire x1="0.5" y1="-0.5" x2="1" y2="0" width="0.127" layer="48"/>
+<wire x1="1" y1="0" x2="1.5" y2="0" width="0.127" layer="48"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATTINY_25_45_85">
@@ -3391,6 +3403,31 @@ Source: AVX .. aphvc.pdf</description>
 <text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+</symbol>
+<symbol name="LED">
+<wire x1="1.27" y1="-2.54" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="-5.08" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="-5.08" x2="-1.27" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-2.286" y1="-3.556" x2="-3.175" y2="-4.445" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-4.318" x2="-2.413" y2="-5.207" width="0.1524" layer="94"/>
+<text x="3.556" y="-7.112" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="5.715" y="-7.112" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="A" x="0" y="0" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="C" x="0" y="-7.62" visible="off" length="short" direction="pas" rot="R90"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-3.302" y="-4.064"/>
+<vertex x="-3.556" y="-4.826"/>
+<vertex x="-2.794" y="-4.572"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="-2.54" y="-4.826"/>
+<vertex x="-2.794" y="-5.588"/>
+<vertex x="-2.032" y="-5.334"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -4953,6 +4990,22 @@ Source: AVX .. aphvc.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="LED_SMD_SM" prefix="LED">
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LED_SMD_SM">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="C" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="pinhead" urn="urn:adsk.eagle:library:325">
@@ -5199,6 +5252,10 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="LED1" library="DR" deviceset="LED_SMD_SM" device=""/>
+<part name="LED2" library="DR" deviceset="LED_SMD_SM" device=""/>
+<part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5247,13 +5304,13 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="NAME" x="112.19" y="96.9986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="117.69" y="93.198" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="111.5" y="132.5" smashed="yes">
-<attribute name="NAME" x="107.69" y="133.9986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="107.69" y="129.198" size="1.778" layer="96"/>
+<instance part="R5" gate="G$1" x="80" y="73.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="78.5014" y="69.69" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="83.302" y="69.69" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R6" gate="G$1" x="118" y="135.5" smashed="yes">
-<attribute name="NAME" x="114.19" y="136.9986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="114.19" y="132.198" size="1.778" layer="96"/>
+<instance part="R6" gate="G$1" x="90" y="73.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="88.5014" y="69.69" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="93.302" y="69.69" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="P+2" gate="1" x="100" y="95.5" smashed="yes">
 <attribute name="VALUE" x="97.46" y="90.42" size="1.778" layer="96" rot="R90"/>
@@ -5291,6 +5348,20 @@ Source: AVX .. aphvc.pdf</description>
 </instance>
 <instance part="GND5" gate="1" x="97" y="110.5" smashed="yes">
 <attribute name="VALUE" x="94.46" y="107.96" size="1.778" layer="96"/>
+</instance>
+<instance part="LED1" gate="G$1" x="80" y="66.5" smashed="yes">
+<attribute name="NAME" x="83.556" y="59.388" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="85.715" y="59.388" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED2" gate="G$1" x="90" y="66.5" smashed="yes">
+<attribute name="NAME" x="93.556" y="59.388" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="95.715" y="59.388" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P+5" gate="1" x="80" y="82.5" smashed="yes">
+<attribute name="VALUE" x="77.46" y="77.42" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND8" gate="1" x="80" y="55.5" smashed="yes">
+<attribute name="VALUE" x="77.46" y="52.96" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -5345,6 +5416,14 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="JP2" gate="A" pin="6"/>
 <wire x1="97" y1="114.5" x2="86.36" y2="114.5" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="114.5" x2="86.08" y2="114.46" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="LED2" gate="G$1" pin="C"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<wire x1="90" y1="58.88" x2="80" y2="58.88" width="0.1524" layer="91"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="80" y1="58.04" x2="80" y2="58.88" width="0.1524" layer="91"/>
+<junction x="80" y="58.88"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -5402,6 +5481,14 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="115" y1="90.58" x2="115" y2="93" width="0.1524" layer="91"/>
 <junction x="115" y="93"/>
 </segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="P+5" gate="1" pin="+5V"/>
+<wire x1="80" y1="78.58" x2="80" y2="79.96" width="0.1524" layer="91"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="90" y1="78.58" x2="80" y2="78.58" width="0.1524" layer="91"/>
+<junction x="80" y="78.58"/>
+</segment>
 </net>
 <net name="SCK" class="0">
 <segment>
@@ -5427,8 +5514,11 @@ Source: AVX .. aphvc.pdf</description>
 <label x="56.5" y="105" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="47.02" y1="77.34" x2="50" y2="77.34" width="0.1524" layer="91"/>
+<wire x1="47" y1="77" x2="50" y2="77" width="0.1524" layer="91"/>
 <label x="49.5" y="77.5" size="1.778" layer="95"/>
+<wire x1="47" y1="77" x2="47" y2="77.5" width="0.1524" layer="91"/>
+<pinref part="ROT1" gate="G$1" pin="S"/>
+<wire x1="47" y1="77.5" x2="45.5" y2="77.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <label x="64" y="119.5" size="1.778" layer="95"/>
@@ -5510,15 +5600,23 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="121" y="79.08"/>
 </segment>
 </net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="ROT1" gate="G$1" pin="S"/>
-<wire x1="47.5" y1="77.5" x2="45.5" y2="77.5" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$3" class="0">
 <segment>
 <junction x="115" y="93"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="A"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="90" y1="66.5" x2="90" y2="68.42" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="80" y1="66.5" x2="80" y2="68.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
