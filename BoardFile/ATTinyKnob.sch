@@ -159,17 +159,6 @@
 <wire x1="5.4" y1="-4.6" x2="5.4" y2="-4.4" width="0.127" layer="21"/>
 <text x="-0.4" y="1.2" size="1.27" layer="25" ratio="3">&gt;NAME</text>
 </package>
-<package name="USB_MINI">
-<smd name="P1" x="0" y="-1.75" dx="2" dy="1.25" layer="1"/>
-<smd name="P4" x="8.5" y="-1.75" dx="2" dy="1.25" layer="1"/>
-<smd name="P3" x="8.5" y="0" dx="2" dy="1.25" layer="1"/>
-<smd name="P2" x="0" y="0" dx="2" dy="1.25" layer="1"/>
-<smd name="3" x="4.25" y="1.5" dx="0.4" dy="2" layer="1"/>
-<smd name="2" x="3.45" y="1.5" dx="0.4" dy="2" layer="1"/>
-<smd name="1" x="2.65" y="1.5" dx="0.4" dy="2" layer="1"/>
-<smd name="5" x="5.85" y="1.5" dx="0.4" dy="2" layer="1"/>
-<wire x1="-1" y1="-4.577" x2="9.5" y2="-4.577" width="0.1524" layer="21"/>
-</package>
 <package name="ROTARY_EC16">
 <pad name="A" x="-5" y="-10.5" drill="1.6" diameter="3.81" shape="octagon"/>
 <pad name="B" x="0" y="-10.5" drill="1.6" diameter="3.81" shape="octagon"/>
@@ -3311,6 +3300,37 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="0.5" y1="-0.5" x2="1" y2="0" width="0.127" layer="48"/>
 <wire x1="1" y1="0" x2="1.5" y2="0" width="0.127" layer="48"/>
 </package>
+<package name="USB_MINI">
+<smd name="P1" x="0" y="-1.75" dx="2" dy="1.25" layer="1"/>
+<smd name="P4" x="8.5" y="-1.75" dx="2" dy="1.25" layer="1"/>
+<smd name="P3" x="8.5" y="0" dx="2" dy="1.25" layer="1"/>
+<smd name="P2" x="0" y="0" dx="2" dy="1.25" layer="1"/>
+<smd name="3" x="4.25" y="1.5" dx="0.4" dy="2" layer="1"/>
+<smd name="2" x="3.45" y="1.5" dx="0.4" dy="2" layer="1"/>
+<smd name="1" x="2.65" y="1.5" dx="0.4" dy="2" layer="1"/>
+<smd name="5" x="5.85" y="1.5" dx="0.4" dy="2" layer="1"/>
+<wire x1="-1" y1="-4.577" x2="9.5" y2="-4.577" width="0.1524" layer="21"/>
+</package>
+<package name="USB_MINI_TH_RIGHTANGLE">
+<pad name="5" x="0" y="0" drill="0.7" diameter="1.0668" shape="offset" rot="R270"/>
+<pad name="3" x="1.6002" y="0" drill="0.7" diameter="1.0668" shape="offset" rot="R270"/>
+<pad name="1" x="3.2004" y="0" drill="0.7" diameter="1.0668" shape="offset" rot="R270"/>
+<pad name="4" x="0.7874" y="1.1938" drill="0.7" diameter="1.0668" shape="offset" rot="R90"/>
+<pad name="2" x="2.3876" y="1.1938" drill="0.7" diameter="1.0668" shape="offset" rot="R90"/>
+<pad name="9" x="5.3086" y="0.889" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
+<pad name="6" x="-2.1082" y="5.6896" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
+<wire x1="5.3086" y1="0.5588" x2="5.3086" y2="1.2446" width="0.8382" layer="46"/>
+<wire x1="-2.1082" y1="5.3594" x2="-2.1082" y2="6.0452" width="0.8382" layer="46"/>
+<wire x1="-2.2606" y1="0" x2="5.4356" y2="0" width="0.1524" layer="51"/>
+<wire x1="5.4356" y1="0" x2="5.4356" y2="9.779" width="0.1524" layer="51"/>
+<wire x1="5.4356" y1="9.779" x2="-2.2606" y2="9.779" width="0.1524" layer="51"/>
+<wire x1="-2.2606" y1="9.779" x2="-2.2606" y2="0" width="0.1524" layer="51"/>
+<text x="-1.6764" y="-2.5654" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Name</text>
+<wire x1="5.3086" y1="5.3594" x2="5.3086" y2="6.0452" width="0.8382" layer="46"/>
+<pad name="8" x="5.3086" y="5.6896" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
+<wire x1="-2.1082" y1="0.5588" x2="-2.1082" y2="1.2446" width="0.8382" layer="46"/>
+<pad name="7" x="-2.1082" y="0.889" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATTINY_25_45_85">
@@ -3328,17 +3348,6 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="NRES/PB5" x="0" y="-5.08" length="middle"/>
 <pin name="VCC" x="33.02" y="-5.08" length="middle" direction="pwr" rot="R180"/>
 <pin name="GND" x="0" y="-12.7" length="middle" direction="pwr"/>
-</symbol>
-<symbol name="USB_MINI">
-<pin name="5V" x="0" y="0" length="middle" rot="R270"/>
-<pin name="D-" x="2.54" y="0" length="middle" rot="R270"/>
-<pin name="D+" x="5.08" y="0" length="middle" rot="R270"/>
-<pin name="GND" x="12.7" y="0" length="middle" rot="R270"/>
-<wire x1="-2.54" y1="-5.08" x2="15.24" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="15.24" y1="-5.08" x2="15.24" y2="-15.24" width="0.1524" layer="94"/>
-<wire x1="15.24" y1="-15.24" x2="-2.54" y2="-15.24" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="-15.24" x2="-2.54" y2="-5.08" width="0.1524" layer="94"/>
-<text x="-1.016" y="-14.224" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 <symbol name="ROTARY_EC16">
 <pin name="S" x="25.5" y="-2.5" visible="pad" length="middle" rot="R180"/>
@@ -3429,6 +3438,18 @@ Source: AVX .. aphvc.pdf</description>
 <vertex x="-2.032" y="-5.334"/>
 </polygon>
 </symbol>
+<symbol name="USB_MINI">
+<pin name="5V" x="0" y="0" length="middle" rot="R270"/>
+<pin name="D-" x="2.54" y="0" length="middle" rot="R270"/>
+<pin name="D+" x="5.08" y="0" length="middle" rot="R270"/>
+<pin name="GND" x="12.7" y="0" length="middle" rot="R270"/>
+<wire x1="-2.54" y1="-5.08" x2="15.24" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="15.24" y1="-15.24" x2="-2.54" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-15.24" x2="-2.54" y2="-5.08" width="0.1524" layer="94"/>
+<text x="-1.016" y="-14.224" size="1.778" layer="95">&gt;NAME</text>
+<pin name="ID" x="7.62" y="0" visible="pin" length="middle" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ATTINY_25_45_85" prefix="U">
@@ -3446,24 +3467,6 @@ Source: AVX .. aphvc.pdf</description>
 <connect gate="G$1" pin="PB3" pad="2"/>
 <connect gate="G$1" pin="PB4" pad="3"/>
 <connect gate="G$1" pin="VCC" pad="8"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="USB_MINI" prefix="USB">
-<gates>
-<gate name="G$1" symbol="USB_MINI" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="USB_MINI">
-<connects>
-<connect gate="G$1" pin="5V" pad="1"/>
-<connect gate="G$1" pin="D+" pad="3"/>
-<connect gate="G$1" pin="D-" pad="2"/>
-<connect gate="G$1" pin="GND" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -5006,6 +5009,36 @@ Source: AVX .. aphvc.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="USB_MINI" prefix="USB">
+<gates>
+<gate name="G$1" symbol="USB_MINI" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="USB_MINI">
+<connects>
+<connect gate="G$1" pin="5V" pad="1"/>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="USB_MINI_TH_RIGHTANG" package="USB_MINI_TH_RIGHTANGLE">
+<connects>
+<connect gate="G$1" pin="5V" pad="1"/>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5 6 7 8 9"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="pinhead" urn="urn:adsk.eagle:library:325">
@@ -5229,7 +5262,6 @@ Source: AVX .. aphvc.pdf</description>
 <parts>
 <part name="U1" library="DR" deviceset="ATTINY_25_45_85" device=""/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X3" device="" package3d_urn="urn:adsk.eagle:package:22462/2"/>
-<part name="USB1" library="DR" deviceset="USB_MINI" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -5256,6 +5288,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="LED2" library="DR" deviceset="LED_SMD_SM" device=""/>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="USB1" library="DR" deviceset="USB_MINI" device="USB_MINI_TH_RIGHTANG"/>
 </parts>
 <sheets>
 <sheet>
@@ -5269,9 +5302,6 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="JP2" gate="A" x="81" y="117" smashed="yes">
 <attribute name="NAME" x="74.65" y="122.715" size="1.778" layer="95"/>
 <attribute name="VALUE" x="74.65" y="109.38" size="1.778" layer="96"/>
-</instance>
-<instance part="USB1" gate="G$1" x="130" y="93" smashed="yes" rot="R90">
-<attribute name="NAME" x="144.224" y="91.984" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="GND6" gate="1" x="18" y="96" smashed="yes">
 <attribute name="VALUE" x="15.46" y="93.46" size="1.778" layer="96"/>
@@ -5363,6 +5393,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND8" gate="1" x="80" y="55.5" smashed="yes">
 <attribute name="VALUE" x="77.46" y="52.96" size="1.778" layer="96"/>
 </instance>
+<instance part="USB1" gate="G$1" x="132" y="93" smashed="yes" rot="R90">
+<attribute name="NAME" x="146.224" y="91.984" size="1.778" layer="95" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5379,12 +5412,6 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="20" y1="72" x2="18" y2="72" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="18" y1="72" x2="18" y2="67.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="USB1" gate="G$1" pin="GND"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="130" y1="105.7" x2="129.18" y2="105.7" width="0.1524" layer="91"/>
-<wire x1="129.18" y1="105.7" x2="129.18" y2="105.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="D2" gate="G$1" pin="A"/>
@@ -5424,6 +5451,12 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="80" y1="58.04" x2="80" y2="58.88" width="0.1524" layer="91"/>
 <junction x="80" y="58.88"/>
+</segment>
+<segment>
+<pinref part="USB1" gate="G$1" pin="GND"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="132" y1="105.7" x2="129.18" y2="105.7" width="0.1524" layer="91"/>
+<wire x1="129.18" y1="105.7" x2="129.18" y2="105.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -5471,8 +5504,7 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="97" y1="119.38" x2="97" y2="120.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="USB1" gate="G$1" pin="5V"/>
-<wire x1="130" y1="93" x2="115" y2="93" width="0.1524" layer="91"/>
+<wire x1="132" y1="93" x2="115" y2="93" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
 <wire x1="115" y1="93" x2="112" y2="93" width="0.1524" layer="91"/>
 <wire x1="112" y1="93" x2="112" y2="92.96" width="0.1524" layer="91"/>
@@ -5480,6 +5512,7 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="115" y1="90.58" x2="115" y2="93" width="0.1524" layer="91"/>
 <junction x="115" y="93"/>
+<pinref part="USB1" gate="G$1" pin="5V"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
@@ -5572,21 +5605,19 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="USB1" gate="G$1" pin="D+"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="130" y1="98.08" x2="126.58" y2="98.08" width="0.1524" layer="91"/>
-<wire x1="126.58" y1="98.08" x2="126.58" y2="98" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="128" y1="85.08" x2="128" y2="98" width="0.1524" layer="91"/>
 <wire x1="128" y1="98" x2="126.58" y2="98" width="0.1524" layer="91"/>
 <junction x="126.58" y="98"/>
+<pinref part="USB1" gate="G$1" pin="D+"/>
+<wire x1="132" y1="98.08" x2="126.58" y2="98.08" width="0.1524" layer="91"/>
+<wire x1="126.58" y1="98.08" x2="126.58" y2="98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="USB1" gate="G$1" pin="D-"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="130" y1="95.54" x2="130" y2="95.5" width="0.1524" layer="91"/>
 <wire x1="130" y1="95.5" x2="121.08" y2="95.5" width="0.1524" layer="91"/>
 <wire x1="121.08" y1="95.5" x2="121.08" y2="80.5" width="0.1524" layer="91"/>
 <wire x1="121.08" y1="80.5" x2="121" y2="80.5" width="0.1524" layer="91"/>
@@ -5598,6 +5629,9 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="115" y1="80.42" x2="121" y2="80.42" width="0.1524" layer="91"/>
 <wire x1="121" y1="80.42" x2="121" y2="79.08" width="0.1524" layer="91"/>
 <junction x="121" y="79.08"/>
+<pinref part="USB1" gate="G$1" pin="D-"/>
+<wire x1="130" y1="95.5" x2="130" y2="95.54" width="0.1524" layer="91"/>
+<wire x1="130" y1="95.54" x2="132" y2="95.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
