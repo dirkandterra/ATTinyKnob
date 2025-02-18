@@ -3319,17 +3319,25 @@ Source: AVX .. aphvc.pdf</description>
 <pad name="2" x="2.3876" y="1.1938" drill="0.7" diameter="1.0668" shape="offset" rot="R90"/>
 <pad name="9" x="5.3086" y="0.889" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
 <pad name="6" x="-2.1082" y="5.6896" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
-<wire x1="5.3086" y1="0.5588" x2="5.3086" y2="1.2446" width="0.8382" layer="46"/>
-<wire x1="-2.1082" y1="5.3594" x2="-2.1082" y2="6.0452" width="0.8382" layer="46"/>
 <wire x1="-2.2606" y1="0" x2="5.4356" y2="0" width="0.1524" layer="51"/>
 <wire x1="5.4356" y1="0" x2="5.4356" y2="9.779" width="0.1524" layer="51"/>
 <wire x1="5.4356" y1="9.779" x2="-2.2606" y2="9.779" width="0.1524" layer="51"/>
 <wire x1="-2.2606" y1="9.779" x2="-2.2606" y2="0" width="0.1524" layer="51"/>
 <text x="-1.6764" y="-2.5654" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Name</text>
-<wire x1="5.3086" y1="5.3594" x2="5.3086" y2="6.0452" width="0.8382" layer="46"/>
 <pad name="8" x="5.3086" y="5.6896" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
-<wire x1="-2.1082" y1="0.5588" x2="-2.1082" y2="1.2446" width="0.8382" layer="46"/>
 <pad name="7" x="-2.1082" y="0.889" drill="0.6096" diameter="1.3462" shape="long" rot="R90"/>
+<hole x="-2.1082" y="5.334" drill="0.8382"/>
+<hole x="-2.1082" y="6.096" drill="0.8382"/>
+<hole x="-2.1082" y="5.715" drill="0.8382"/>
+<hole x="5.3086" y="5.3086" drill="0.8382"/>
+<hole x="5.3086" y="6.0706" drill="0.8382"/>
+<hole x="5.3086" y="5.6896" drill="0.8382"/>
+<hole x="-2.1082" y="0.508" drill="0.8382"/>
+<hole x="-2.1082" y="1.27" drill="0.8382"/>
+<hole x="-2.1082" y="0.889" drill="0.8382"/>
+<hole x="5.3086" y="0.508" drill="0.8382"/>
+<hole x="5.3086" y="1.27" drill="0.8382"/>
+<hole x="5.3086" y="0.889" drill="0.8382"/>
 </package>
 </packages>
 <symbols>
@@ -5309,8 +5317,8 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND7" gate="1" x="129.18" y="102.8" smashed="yes">
 <attribute name="VALUE" x="126.64" y="100.26" size="1.778" layer="96"/>
 </instance>
-<instance part="P+1" gate="1" x="56" y="124" smashed="yes">
-<attribute name="VALUE" x="53.46" y="118.92" size="1.778" layer="96" rot="R90"/>
+<instance part="P+1" gate="1" x="58.5" y="118" smashed="yes">
+<attribute name="VALUE" x="55.96" y="112.92" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="ROT1" gate="G$1" x="20" y="80" smashed="yes">
 <attribute name="NAME" x="25" y="66.5" size="1.778" layer="104"/>
@@ -5479,14 +5487,16 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="+5V" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="VCC"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
-<wire x1="53.02" y1="109.92" x2="56" y2="109.92" width="0.1524" layer="91"/>
-<wire x1="56" y1="109.92" x2="56" y2="121.46" width="0.1524" layer="91"/>
+<wire x1="58.5" y1="109.92" x2="58.5" y2="115.46" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
+<wire x1="53.02" y1="109.92" x2="58.5" y2="109.92" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="41.08" y1="120.5" x2="52.5" y2="120.5" width="0.1524" layer="91"/>
-<wire x1="52.5" y1="120.5" x2="53.02" y2="120.5" width="0.1524" layer="91"/>
-<wire x1="53.02" y1="120.5" x2="53.02" y2="109.92" width="0.1524" layer="91"/>
+<wire x1="41.08" y1="120.5" x2="55.5" y2="120.5" width="0.1524" layer="91"/>
+<wire x1="55.5" y1="120.5" x2="55.52" y2="120.5" width="0.1524" layer="91"/>
+<wire x1="55.5" y1="120.5" x2="55.5" y2="109.92" width="0.1524" layer="91"/>
+<wire x1="55.5" y1="109.92" x2="53.02" y2="109.92" width="0.1524" layer="91"/>
+<junction x="55.5" y="120.5"/>
 <junction x="53.02" y="109.92"/>
 </segment>
 <segment>
@@ -5504,15 +5514,14 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="97" y1="119.38" x2="97" y2="120.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="132" y1="93" x2="115" y2="93" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="115" y1="93" x2="112" y2="93" width="0.1524" layer="91"/>
-<wire x1="112" y1="93" x2="112" y2="92.96" width="0.1524" layer="91"/>
-<wire x1="112" y1="92.96" x2="100" y2="92.96" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="115" y1="90.58" x2="115" y2="93" width="0.1524" layer="91"/>
-<junction x="115" y="93"/>
 <pinref part="USB1" gate="G$1" pin="5V"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="132" y1="93" x2="115" y2="93" width="0.1524" layer="91"/>
+<wire x1="115" y1="93" x2="115" y2="90.58" width="0.1524" layer="91"/>
+<wire x1="115" y1="93" x2="100" y2="93" width="0.1524" layer="91"/>
+<wire x1="100" y1="93" x2="100" y2="92.96" width="0.1524" layer="91"/>
+<junction x="115" y="93"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
@@ -5634,11 +5643,6 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="130" y1="95.54" x2="132" y2="95.54" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
-<segment>
-<junction x="115" y="93"/>
-</segment>
-</net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="LED2" gate="G$1" pin="A"/>
@@ -5653,12 +5657,14 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="80" y1="66.5" x2="80" y2="68.42" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$5" class="0">
+<segment>
+<wire x1="112" y1="93" x2="112" y2="92.96" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
-<errors>
-<approved hash="113,1,101.837,53.4712,JP1,,,,,"/>
-</errors>
 </schematic>
 </drawing>
 <compatibility>
